@@ -1,11 +1,15 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const PostSchema = new Schema({
+const DiseaseSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId
   },
-  text: {
+  diseaseName: {
+    type: String,
+    required: true
+  },
+  diseaseDesc: {
     type: String,
     required: true
   },
@@ -15,27 +19,37 @@ const PostSchema = new Schema({
   avatar: {
     type: String
   },
-  likes: [
-    {
-      user: {
-        type: Schema.Types.ObjectId
-      }
-    }
-  ],
-  comments: [
+  riskFactors: [
     {
       user: {
         type: Schema.Types.ObjectId
       },
-      text: {
+      riskFactorName: {
         type: String,
         required: true
       },
-      name: {
-        type: String
+      riskFactorDesc: {
+        type: String,
+        required: true
       },
-      avatar: {
-        type: String
+      date: {
+        type: Date,
+        default: Date.now
+      }
+    }
+  ],
+  symptoms: [
+    {
+      user: {
+        type: Schema.Types.ObjectId
+      },
+      symptomName: {
+        type: String,
+        required: true
+      },
+      symptomDesc: {
+        type: String,
+        required: true
       },
       date: {
         type: Date,
@@ -49,4 +63,4 @@ const PostSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('post', PostSchema);
+module.exports = mongoose.model('disease', DiseaseSchema);

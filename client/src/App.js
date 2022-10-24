@@ -7,12 +7,11 @@ import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
 import ProfileForm from './components/profile-forms/ProfileForm';
-import AddExperience from './components/profile-forms/AddExperience';
-import AddEducation from './components/profile-forms/AddEducation';
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
-import Posts from './components/posts/Posts';
-import Post from './components/post/Post';
+import Diseases from './components/diseases/Diseases';
+import RiskFactor from './components/disease/RiskFactor';
+import Symptom from './components/disease/Symptom';
 import NotFound from './components/layout/NotFound';
 import PrivateRoute from './components/routing/PrivateRoute';
 import { LOGOUT } from './actions/types';
@@ -65,16 +64,9 @@ const App = () => {
             path="edit-profile"
             element={<PrivateRoute component={ProfileForm} />}
           />
-          <Route
-            path="add-experience"
-            element={<PrivateRoute component={AddExperience} />}
-          />
-          <Route
-            path="add-education"
-            element={<PrivateRoute component={AddEducation} />}
-          />
-          <Route path="posts" element={<PrivateRoute component={Posts} />} />
-          <Route path="posts/:id" element={<PrivateRoute component={Post} />} />
+          <Route path="diseases" element={<PrivateRoute component={Diseases} />} />
+          <Route path="riskfactors/:id" element={<PrivateRoute component={RiskFactor} />} />
+          <Route path="symptoms/:id" element={<PrivateRoute component={Symptom} />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </Router>

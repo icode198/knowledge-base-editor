@@ -365,9 +365,7 @@ button {
   display: grid;
   grid-template-areas:
     'top top'
-    'about about'
-    'exp edu'
-    'github github';
+    'about about';
   grid-gap: 1rem;
 }
 
@@ -405,76 +403,28 @@ button {
   text-align: center;
 }
 
-.profile-exp {
-  grid-area: exp;
-}
-
-.profile-edu {
-  grid-area: edu;
-}
-
-.profile-exp h2,
-.profile-edu h2 {
-  margin-bottom: 1rem;
-}
-
-.profile-exp > div,
-.profile-edu > div {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: #ccc 1px dotted;
-}
-
-.profile-exp > div:last-child,
-.profile-edu > div:last-child {
-  border: 0;
-}
-
-.profile-exp p,
-.profile-edu p {
-  margin: 0.5rem 0;
-}
-
-.profile-github {
-  grid-area: github;
-}
-
-.profile-github .repo {
-  display: flex;
-}
-
-.profile-github .repo > div:first-child {
-  flex: 7;
-  flex-basis: 70%;
-}
-
-.profile-github > div:last-child {
-  flex: 3;
-  flex-basis: 20%;
-}
-
-/* Posts Page */
-.post-form .post-form-header {
+/* Knowledge base Page */
+.disease-form .disease-form-header {
   background: var(--primary-color);
   padding: 0.5rem;
 }
 
-.post {
+.disease {
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-gap: 2rem;
   align-items: center;
 }
 
-.post > div:first-child {
+.disease > div:first-child {
   text-align: center;
 }
 
-.post img {
+.disease img {
   width: 100px;
 }
 
-.post .comment-count {
+.disease .count-of-set {
   background: var(--light-color);
   color: var(--primary-color);
   padding: 0.1rem 0.2rem;
@@ -482,7 +432,7 @@ button {
   font-size: 0.8rem;
 }
 
-.post .post-date {
+.disease .disease-date {
   color: #aaa;
   font-size: 0.8rem;
   margin-bottom: 0.5rem;
@@ -551,10 +501,7 @@ button {
   .profile-grid {
     grid-template-areas:
       'top'
-      'about'
-      'exp'
-      'edu'
-      'github';
+      'about';
   }
 
   .profile-about .skills {
@@ -567,11 +514,11 @@ button {
     margin-bottom: 0.2rem;
   }
 
-  .post {
+  .disease {
     grid-template-columns: 1fr;
   }
-  .post a,
-  .post button {
+  .disease a,
+  .disease button {
     padding: 0.3rem 0.4rem;
   }
 }
